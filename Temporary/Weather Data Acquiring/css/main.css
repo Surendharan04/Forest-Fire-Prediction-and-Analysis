@@ -1,0 +1,31 @@
+h2{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.input-field {
+    width: 300px;
+    height: 30px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.placeholder{
+    font-weight:20;
+}
+
+.input-label {
+    font-size: 25px;
+    font-weight: bolder;
+    display: inline-block;
+    width: 100px;
+}
+
+.sub{
+    background-color: lightsalmon;
+    color: maroon;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bolder;
+}

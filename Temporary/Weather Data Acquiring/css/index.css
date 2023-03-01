@@ -1,0 +1,47 @@
+body {
+    background-image: url(https://wallpapercave.com/wp/Gjmm73D.jpg);
+    color: aliceblue;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h1 {
+    color: rgb(245, 203, 75);
+    font-size: 65px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.log{
+    background-color: lightsalmon;    
+    color: maroon;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.input-field {
+    align-self: auto;
+    width: 200px;
+    height: 30px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.placeholder {
+    font-weight: 20;
+}
+
+.input-label {
+    font-size: 25px;
+    font-weight: bolder;
+    width: 70px;
+}
+
+.user,.pass,.log{
+    align-self: center;
+}
+
+.f1{
+    text-align: center;
+}

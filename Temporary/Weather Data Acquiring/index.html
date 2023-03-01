@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--HTML is a building block for creating a website-->
+
+<head>
+    <title>
+        Forest Fires
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <script src="js/index.js"></script>
+    
+    <header>
+        <center>
+            <h1>Forest Fire Analysis and Prediction</h1>
+            <br><br>
+            <img src="https://cdn.images.express.co.uk/img/dynamic/151/590x/fires-1224533.jpg?r=1578310207668" alt="Forest Fire">
+        </center>
+    </header>
+
+    <br>
+    <br>
+
+    <main>
+        <form method="get" class="f1">
+            <h2 style="font-size: 30px;">Login Credentials</h2>
+            <div class="user">
+                <label for="user" class="input-label">Username:</label>
+                <input type="text" id="user" name="username" placeholder="User name" class="input-field">
+            </div>
+            <br>
+            <div class="pass">
+                <label for="pass" class="input-label">Password:</label>
+                <input type="password" id="pass" name="password" placeholder="Password" class="input-field">
+            </div>
+            <br>
+            <input type="submit" value="Log In" class="log" onclick="checkCredentials(event)">
+        </form>
+    </main>
+    <br>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
