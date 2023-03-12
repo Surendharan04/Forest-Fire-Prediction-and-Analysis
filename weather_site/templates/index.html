@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        Forest Fires
+    </title>
+    <style>
+        body {
+            background-image: url(https://cdn.images.express.co.uk/img/dynamic/151/590x/fires-1224533.jpg?r=1578310207668);
+            color: aliceblue;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        h1 {
+            color: rgb(245, 203, 75);
+            font-size: 65px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+
+
+        h2 {
+            font-size: 40px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .input-field {
+            width: 300px;
+            height: 30px;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .placeholder {
+            font-weight: 20;
+        }
+
+        .input-label {
+            font-size: 25px;
+            font-weight: bolder;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .sub {
+            background-color: lightsalmon;
+            color: maroon;
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        .data{
+            margin: 0% 25% 0% 25%;
+            border-radius: 20px;
+            background-color: rgba(210, 105, 30, 0.699); 
+            color:rgb(247, 253, 123);
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="row" style="background-color:rgb(139, 56, 0); color:rgb(246, 146, 70)">
+        <h1 class="col-md-3 text-center">Forest Fire Prediction</h1>
+    </nav>
+    <br />
+
+
+    <div class="container">
+        <center>
+            <form action="{{ url_for('weather') }}" method="POST" class="f1">
+                <h2>Location Info</h2>
+                <div class="fd">
+                    <label for="city" class="input-label">City:</label>
+                    <input type="text" id="city" name="city" placeholder="City name" class="input-field">
+                </div>
+                <br>
+                <div class="fd">
+                    <label for="pincode" class="input-label">Pincode:</label>
+                    <input type="number" id="pincode" name="pin" placeholder="Country code" class="input-field">
+                </div>
+                <br>
+                <input type="submit" name="sub" class="sub">
+                <br>
+                <br>
+            </form>
+        <div class="data">
+            {% if data.temperature and data.pressure and data.humidity %}
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Temperature : {{data.temperature}}</h2>
+                <h2>Pressure : {{data.pressure}} </h2>
+                <h2>Humidity : {{data.humidity}}</h2>
+            </div>
+            {% endif %}
+        </div>
+        </center>
+    </div>
+    <br>
+</body>
+
+</html>
