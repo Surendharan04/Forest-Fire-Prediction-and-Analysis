@@ -1,0 +1,32 @@
+{% extends 'new/base.html' %}
+
+{% block content %}
+<body>
+    <div style="background-color: #e9ecef;">
+        <a class="navbar-brand text-dark" style="margin-left: 30px;" href="{% url 'details_all' %}">All</a>
+        <a class="navbar-brand text-dark" style="margin-left: 10px;" href="{% url 'details_last' %}">Last</a>
+    </div>
+    <br>
+    <div class="feed_table">
+    <table class="table" border="default" style="table-layout: fixed;">
+        <tr>
+            <th>Temperature</th><th>RH</th><th>Ws</th>
+            <th>Rain</th><th>FFMC</th><th>DMC</th>
+            <th>DC</th>
+            <th>ISI</th><th>BUI</th><th>FWI</th><th>Classes</th>
+            </tr>
+        {% for i in model %}
+        <tr>
+            <td>{{i.Temperature}}</td><td>{{i.RH}}</td>
+            <td>{{i.Ws}}</td><td>{{i.Rain}}</td>
+            <td>{{i.FFMC}}</td><td>{{i.DMC}}</td>
+            <td>{{i.DC}}</td><td>{{i.ISI}}</td>
+            <td>{{i.BUI}}</td><td>{{i.FWI}}</td>
+            <td>{{i.Classes}}</td>
+        </tr>
+        {% endfor %}
+</table>
+</div>
+{% endblock content %}
+</body>
+</html>

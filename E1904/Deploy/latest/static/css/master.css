@@ -1,0 +1,15 @@
+  .white{
+   color:rgb(252, 140, 12);
+   font-weight: 800;
+   }
+   .space{
+   color: rgb(0, 0, 0);
+   margin:10px 30px;
+   padding:10px 10px;
+   font: initial;
+   background: aliceblue;
+   width:500px
+   }
+   .gap{
+   padding:10px 20px;
+   }

@@ -1,0 +1,70 @@
+{% extends 'new/base.html' %}
+{% load static %}
+
+
+	
+	{% block content %}
+	<body class="index">
+		
+	<div>
+		<div style="background-color: #ff9a03a6;">
+		<a class="navbar-brand text-dark" style="margin-left: 30px; margin-top: 10px; color: aquamarine;" font-co="10px"; href="{% url 'apredict' %}">Enter Details</a><h3 style="text-align:center;margin-top: -50px; color:rgb(229, 138, 252);"><b>FOREST FIRE PREDICTION</b></h1><a class="navbar-brand text-dark" style="margin-left: 1260px; margin-top: -40px; color: aquamarine;" href="{% url 'feedback' %}">Feedback</a>
+	
+		
+	</div><br>
+     <!-- Main Input For Receiving Query to our ML -->
+
+	 <form class="form1 container1" action="{% url 'predict' %}" style="background-color: rgba(214, 183, 43, 0.342); box-sizing: border-box;
+	 font-family: proxima_nova_rgregular, Helvetica, Arial, sans-serif;" method="POST">
+	 {% csrf_token %}
+		 <fieldset class="fieldset1">
+			 <legend class="legend1">Enter the Detail</legend>
+
+	 <label class="white"  for=""> Temperature </label>
+	 <input type="number" class="space form-control" step="0.01" name="Temperature" placeholder="°C" required="required" /><br><br>
+
+	 <label class="white"  for=""> Humidity </label>
+	 <input type="number" class="space form-control" step="0.01" name="RH" placeholder=" g/m3" required="required" /><br><br>
+
+	 <label class="white"  for=""> Wind Speed </label>
+	 <input type="number" class="space form-control" step="0.01" name="Ws" placeholder="m/s" required="required" /><br><br>
+
+	 <label class="white"  for=""> Rainfall </label>
+	 <input type="number" class="space form-control" step="0.01" name="Rain" placeholder="mm" required="required" /><br><br>
+
+	 <label class="white"  for=""> Fine Fuel Moisture Code </label>
+	 <input type="number" class="space form-control" step="0.01" name="FFMC" placeholder="cm" required="required" /><br><br>
+
+	 <label class="white"  for=""> Duff Moisture Code </label>
+	 <input type="number" class="space form-control" step="0.01" name="DMC" placeholder="" required="required" /><br><br>
+     
+	 <label class="white"  for=""> Drought Code </label>
+	 <input type="number" class="space form-control" step="0.01" name="DC" placeholder="" required="required" /><br><br>
+
+	 <label class="white"  for=""> Initial Spread Index </label>
+	 <input type="number" class="space form-control" step="0.01" name="ISI" placeholder="" required="required" /><br><br>
+
+	 <label class="white"  for=""> Buildup Index </label>
+	 <input type="number" class="space form-control" step="0.01" name="BUI" placeholder="" required="required" /><br><br>
+
+	 <label class="white"  for=""> Fire Weather Index </label>
+	 <input type="number" class="space form-control" step="0.01" name="FWI" placeholder="" required="required" /><br><br>
+
+	 
+	 <input type="hidden" name="Classes" value="data">
+	 <input class="input1" type="submit" value="Submit"><br>
+		 </fieldset>
+	 </form>
+
+
+   <br>
+   <br>
+<div style="background:url(/static/image/fire.png);padding:10% 40%;overflow: hidden;object-position: center;">
+  <h1>
+	{{ prediction_text }}</h1> 
+</div>
+ </div>
+
+ {% endblock content %}
+</body>
+</html>

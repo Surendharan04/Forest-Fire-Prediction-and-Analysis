@@ -1,0 +1,60 @@
+{% extends 'new/base.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    <div>
+		<div style="background-color: #e9ecef;">
+		    <a class="navbar-brand text-dark" style="margin-left: 30px;" href="{% url 'details_all' %}">All</a>
+		    <a class="navbar-brand text-dark" style="margin-left: 10px;" href="{% url 'details_last' %}">Last</a>
+	    </div>
+        <br>
+        <center>
+        <div class="feed_table">
+            <table class="table" border="default" style="table-layout: fixed;">
+            <tr>
+                <th>Temperature</th><th>RH</th><th>Ws</th>
+                <th>Rain</th><th>FFMC</th><th>DMC</th>
+                <th>DC</th>
+                <th>ISI</th><th>BUI</th><th>FWI</th><th>Classes</th>
+                
+            </tr>
+                <tr>
+                    <td>{{model.Temperature}}</td><td>{{model.RH}}</td>
+                    <td>{{model.Ws}}</td><td>{{model.Rain}}</td>
+                    <td>{{model.FFMC}}</td><td>{{model.DMC}}</td>
+                    <td>{{model.DC}}</td><td>{{model.ISI}}</td>
+                    <td>{{model.BUI}}</td><td>{{model.FWI}}</td>
+                    <td>{{model.Classes}}</td>
+                </tr>    
+            </table>
+        </div>
+        </center>
+        <br><br>
+        <div>
+        <center>
+            <form action="{% url 'details_last' %}" method="POST">
+                {% csrf_token %}
+                {% for f in form %}
+                <p>
+                    {{ f.label_tag }}<br>
+                    {{ f }}
+                    
+                </p>
+                {% endfor %}
+                <br>
+            
+                {% if not msg %}
+                    <input type="submit">
+                {% else %}
+                    {{msg}}
+                {% endif %}
+            
+            </form>
+        </center>
+        </div>
+        
+        
+{% endblock content %}
+</body>
+</html>
