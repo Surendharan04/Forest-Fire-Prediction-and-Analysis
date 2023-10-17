@@ -6,7 +6,7 @@ from . import models
 import numpy as np
 import joblib
 
-model = joblib.load('D:/Programming Folder/Github/Techavention/Forest-Fire-Prediction-and-Analysis/E1904/Deploy/latest/new/catboost.pkl')
+model = joblib.load('D:/Programming Folder/Github/Techavention/Forest-Fire-Prediction-and-Analysis/E1904/Deploy/latest/new/SVM.pkl')
 
 
 # Create your views here.
